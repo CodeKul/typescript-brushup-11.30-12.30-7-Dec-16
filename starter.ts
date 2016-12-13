@@ -1,3 +1,8 @@
+import { Bike } from './interfaces/bike';
+import { Animal } from './interfaces/animal';
+import { Pump } from './abstractclasses/pump';
+import { Mobile } from './abstractclasses/mobile';
+import { Device } from './abstractclasses/device';
 import { Eagle } from './inheritance/Eagle';
 import { Bird } from './inheritance/Bird';
 import { Pin } from './oops/cons';
@@ -35,5 +40,26 @@ export class Starter {
         console.log('Eagle Flying Speed - '+eagle.getFlyingSpeed());
         console.log('Egale Name - '+eagle.getNameBird());
         console.log('Eagle Legs - '+eagle.getLegs());
+    }
+
+    public abstractClasses() : void {
+       let mobile = new Mobile();
+       mobile.powerUp();
+
+       let pump = new Pump();
+       pump.powerUp();
+    }
+
+    public interfaces() : void {
+
+        let animal = new Animal();
+        animal.walk();
+        animal.eat();
+        animal.getLocation();
+
+        let bike = new Bike();
+        bike.speedUp();
+        bike.blowHorn();
+        bike.getLocation();
     }
 }

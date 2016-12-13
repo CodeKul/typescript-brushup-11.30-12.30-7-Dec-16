@@ -1,4 +1,8 @@
 "use strict";
+var bike_1 = require('./interfaces/bike');
+var animal_1 = require('./interfaces/animal');
+var pump_1 = require('./abstractclasses/pump');
+var mobile_1 = require('./abstractclasses/mobile');
 var Eagle_1 = require('./inheritance/Eagle');
 var Bird_1 = require('./inheritance/Bird');
 var cons_1 = require('./oops/cons');
@@ -33,6 +37,22 @@ var Starter = (function () {
         console.log('Eagle Flying Speed - ' + eagle.getFlyingSpeed());
         console.log('Egale Name - ' + eagle.getNameBird());
         console.log('Eagle Legs - ' + eagle.getLegs());
+    };
+    Starter.prototype.abstractClasses = function () {
+        var mobile = new mobile_1.Mobile();
+        mobile.powerUp();
+        var pump = new pump_1.Pump();
+        pump.powerUp();
+    };
+    Starter.prototype.interfaces = function () {
+        var animal = new animal_1.Animal();
+        animal.walk();
+        animal.eat();
+        animal.getLocation();
+        var bike = new bike_1.Bike();
+        bike.speedUp();
+        bike.blowHorn();
+        bike.getLocation();
     };
     return Starter;
 }());
