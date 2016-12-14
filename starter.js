@@ -1,4 +1,6 @@
 "use strict";
+var mycollection_1 = require('./collections/mycollection');
+var anything_1 = require('./generics/anything');
 var bike_1 = require('./interfaces/bike');
 var animal_1 = require('./interfaces/animal');
 var pump_1 = require('./abstractclasses/pump');
@@ -53,6 +55,18 @@ var Starter = (function () {
         bike.speedUp();
         bike.blowHorn();
         bike.getLocation();
+    };
+    Starter.prototype.generics = function () {
+        var numberAny = new anything_1.Anything();
+        numberAny.assignType(100);
+        console.log("Number any is " + numberAny.whatsCurrentType());
+        var strAny = new anything_1.Anything();
+        strAny.assignType('android');
+        console.log("String any is " + strAny.whatsCurrentType());
+    };
+    Starter.prototype.collections = function () {
+        var myColl = new mycollection_1.MyCollection();
+        myColl.whatIsArray();
     };
     return Starter;
 }());

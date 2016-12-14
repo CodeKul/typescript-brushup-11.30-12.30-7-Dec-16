@@ -1,3 +1,5 @@
+import { MyCollection } from './collections/mycollection';
+import { Anything } from './generics/anything';
 import { Bike } from './interfaces/bike';
 import { Animal } from './interfaces/animal';
 import { Pump } from './abstractclasses/pump';
@@ -61,5 +63,21 @@ export class Starter {
         bike.speedUp();
         bike.blowHorn();
         bike.getLocation();
+    }
+
+    public generics() : void {
+
+        let numberAny = new  Anything<Number>();
+        numberAny.assignType(100);
+        console.log(`Number any is ${numberAny.whatsCurrentType()}`);
+
+        let strAny = new Anything<String>();
+        strAny.assignType('android');
+        console.log(`String any is ${strAny.whatsCurrentType()}`);
+    }
+
+    public collections() : void {
+        let myColl = new MyCollection();
+        myColl.whatIsArray();
     }
 }
